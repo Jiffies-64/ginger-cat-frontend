@@ -15,8 +15,8 @@ import SearchBox from '@/components/common/SearchBox.vue';
 import Banner from '@/components/common/Banner.vue';
 import ActivityEntry from '@/components/common/ActivityEntry.vue';
 import ActivityDisplay from '@/components/common/ActivityDisplay.vue';
-import Header from "@/views/customer/home/header/Header.vue";
-import Goods from "@/views/customer/home/goods/Goods.vue";
+import Header from "@/views/customer/main/home/header/Header.vue";
+import Goods from "@/views/customer/main/home/goods/Goods.vue";
 
 export default {
   name: "CustomerHome",
