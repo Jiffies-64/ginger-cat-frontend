@@ -2,13 +2,14 @@
   <div class="order">
     <!-- Your order page content here -->
     <!-- Import and use necessary components -->
-    order
+    MerchantPromotion.vue
   </div>
 </template>
 
 <script>
 // Import necessary components
 export default {
+  name: "MerchantPromotion",
   components: {
     // Import and use necessary components
   },

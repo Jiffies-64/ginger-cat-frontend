@@ -1,14 +1,15 @@
 <template>
-  <div class="mine">
+  <div class="welfare">
     <!-- Your order page content here -->
     <!-- Import and use necessary components -->
-    mine
+    welfare
   </div>
 </template>
 
 <script>
 // Import necessary components
 export default {
+  name: "CustomerWelfare",
   components: {
     // Import and use necessary components
   },

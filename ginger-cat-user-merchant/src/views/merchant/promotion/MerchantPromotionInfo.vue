@@ -1,14 +1,15 @@
 <template>
-  <div class="welfare">
+  <div class="order">
     <!-- Your order page content here -->
     <!-- Import and use necessary components -->
-    welfare
+    MerchantPromotionInfo.vue
   </div>
 </template>
 
 <script>
 // Import necessary components
 export default {
+  name: "MerchantPromotionInfo",
   components: {
     // Import and use necessary components
   },

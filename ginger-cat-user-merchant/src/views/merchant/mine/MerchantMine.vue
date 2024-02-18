@@ -1,14 +1,15 @@
 <template>
-  <div class="member">
+  <div class="order">
     <!-- Your order page content here -->
     <!-- Import and use necessary components -->
-    member
+    MerchantMine.vue
   </div>
 </template>
 
 <script>
 // Import necessary components
 export default {
+  name: "MerchantMine",
   components: {
     // Import and use necessary components
   },

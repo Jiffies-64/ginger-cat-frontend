@@ -34,6 +34,67 @@
   </van-row>
 </template>
 
+<script>
+export default {
+  props: {
+    item: {
+      type: Object,
+      required: true,
+      default: () => ({
+        id: 0,
+        name: '',
+        price: 0,
+        imageUrl: require('@/assets/001.jpg'),
+        platform: '',
+        distance: 0,
+        promotion: '',
+        orderTime: '',
+        remainingOrders: 10,
+        totalOrders: 10,
+      }),
+      validator: (value) => {
+        return (
+            typeof value.id === 'number' &&
+            typeof value.name === 'string' &&
+            typeof value.price === 'number' &&
+            typeof value.imageUrl === 'string' &&
+            typeof value.platform === 'string' &&
+            typeof value.distance === 'number' &&
+            typeof value.promotion === 'string' &&
+            typeof value.orderTime === 'string' &&
+            typeof value.remainingOrders === 'number'
+        );
+      },
+    },
+  },
+  data() {
+    return {
+      progressWidth: '100%', // Set a default value
+    };
+  },
+  watch: {
+    item: {
+      immediate: true,
+      handler(newValue) {
+        this.calculateProgressWidth(newValue);
+      },
+    },
+  },
+  methods: {
+    calculateProgressWidth(item) {
+      if (item && item.totalOrders > 0) {
+        this.progressWidth = `${(item.remainingOrders / item.totalOrders) * 100}%`;
+      } else {
+        this.progressWidth = '0%';
+      }
+    },
+    formatPrice(price) {
+      return price !== undefined ? `$${price.toFixed(2)}` : '';
+    },
+  },
+};
+</script>
+
 <style scoped>
 .goods-row {
   margin-bottom: 20px;
@@ -123,67 +184,3 @@
   cursor: pointer;
 }
 </style>
-
-
-<script>
-export default {
-  props: {
-    item: {
-      type: Object,
-      required: true,
-      default: () => ({
-        id: 0,
-        name: '',
-        price: 0,
-        imageUrl: require('@/assets/001.jpg'),
-        platform: '',
-        distance: 0,
-        promotion: '',
-        orderTime: '',
-        remainingOrders: 10,
-        totalOrders: 10,
-      }),
-      validator: (value) => {
-        return (
-            typeof value.id === 'number' &&
-            typeof value.name === 'string' &&
-            typeof value.price === 'number' &&
-            typeof value.imageUrl === 'string' &&
-            typeof value.platform === 'string' &&
-            typeof value.distance === 'number' &&
-            typeof value.promotion === 'string' &&
-            typeof value.orderTime === 'string' &&
-            typeof value.remainingOrders === 'number'
-        );
-      },
-    },
-  },
-  data() {
-    return {
-      progressWidth: '100%', // Set a default value
-    };
-  },
-  watch: {
-    item: {
-      immediate: true,
-      handler(newValue) {
-        this.calculateProgressWidth(newValue);
-      },
-    },
-  },
-  methods: {
-    calculateProgressWidth(item) {
-      if (item && item.totalOrders > 0) {
-        this.progressWidth = `${(item.remainingOrders / item.totalOrders) * 100}%`;
-      } else {
-        this.progressWidth = '0%';
-      }
-    },
-    formatPrice(price) {
-      return price !== undefined ? `$${price.toFixed(2)}` : '';
-    },
-  },
-};
-</script>
-
-

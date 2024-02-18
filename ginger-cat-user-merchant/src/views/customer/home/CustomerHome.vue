@@ -3,8 +3,8 @@
     <Header />
     <SearchBox />
     <Banner />
-    <ActivityEntry />
-    <ActivityDisplay />
+<!--    <ActivityEntry />-->
+<!--    <ActivityDisplay />-->
     <Goods />
     <!-- Add other components as needed -->
   </div>
@@ -15,10 +15,11 @@ import SearchBox from '@/components/common/SearchBox.vue';
 import Banner from '@/components/common/Banner.vue';
 import ActivityEntry from '@/components/common/ActivityEntry.vue';
 import ActivityDisplay from '@/components/common/ActivityDisplay.vue';
-import Header from "@/views/home/header/Header.vue";
-import Goods from "@/views/home/goods/Goods.vue";
+import Header from "@/views/customer/home/header/Header.vue";
+import Goods from "@/views/customer/home/goods/Goods.vue";
 
 export default {
+  name: "CustomerHome",
   components: {
     Header,
     SearchBox,
