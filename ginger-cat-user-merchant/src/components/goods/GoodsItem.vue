@@ -15,13 +15,13 @@
       <van-row align="bottom" class="bottom-row">
         <van-col :span="16">
           <p class="goods-order-time">抢单时间：{{ item.orderTime }}</p>
-          <van-row gutter="2" type="flex" align="center" class="goods-remaining-info">
-            <van-col :span="12">
+          <van-row gutter="10" type="flex" align="center" justify="left" class="goods-remaining-info">
+            <van-col :span="10">
               <div class="goods-progress-bar">
                 <div :style="{ width: progressWidth }"></div>
               </div>
             </van-col>
-            <van-col :span="10">
+            <van-col :span="12">
               <p class="goods-remaining">剩余{{ item.remainingOrders }}份</p>
             </van-col>
           </van-row>
@@ -120,7 +120,7 @@ export default {
 }
 
 .goods-name {
-  font-size: 16px; /* 调整字体大小 */
+  font-size: 18px; /* 调整字体大小 */
   margin: 0;
   padding: 0;
 }
@@ -130,22 +130,22 @@ export default {
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 12px;
   color: #888888;
 }
 
 .goods-promotion {
   display: inline-block;
-  margin: 0 0 5px;
+  margin: 0 0 10px;
   padding: 1px 5px;
   border-radius: 2px;
   background-color: #FF4500; /* 桔红色背景 */
   color: #fff;
-  font-size: 10px; /* 调整字体大小 */
+  font-size: 11px; /* 调整字体大小 */
 }
 
 .bottom-row {
-  font-size: 10px;
+  font-size: 12px;
   color: #888888;
 }
 
@@ -155,12 +155,14 @@ export default {
 
 .goods-progress-bar {
   width: 100%;
-  height: 5px;
+  height: 6px;
+  border-radius: 10px;
   background-color: #ddd;
 }
 
 .goods-progress-bar div {
   height: 100%;
+  border-radius: 10px;
   background-color: #fa8a19;
 }
 
@@ -181,9 +183,10 @@ export default {
   background-color: #fa8a19;
   color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 6px 12px;
-  font-size: 12px; /* 调整字体大小 */
+  font-size: 14px; /* 调整字体大小 */
+  font-weight: 600;
   cursor: pointer;
 }
 </style>

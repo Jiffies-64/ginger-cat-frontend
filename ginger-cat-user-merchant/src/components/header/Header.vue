@@ -29,11 +29,12 @@
 <style scoped>
 /* Your component styles here */
 .header {
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .logo-img {
-  max-height: 40px;
+  max-height: 44px;
 }
 
 .location {
@@ -41,7 +42,7 @@
 }
 
 .location-text {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   margin-right: 5px;
 }

@@ -51,7 +51,7 @@ export default {
 <style scoped>
 /* Your home page styles here */
 .home {
-  padding: 10px;
+  padding: 14px;
   background-color: #f0f0f0;
 }
 

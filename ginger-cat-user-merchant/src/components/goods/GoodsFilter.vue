@@ -1,41 +1,19 @@
 <template>
   <div class="goods-filter">
     <!-- First row: Multiple-choice buttons -->
-    <div class="filter-row">
-      <div class="filter-option" :class="{ active: selectedCategory === 'all' }" @click="selectCategory('all')">全城霸王餐</div>
-      <div class="filter-option" :class="{ active: selectedCategory === 'eleme' }" @click="selectCategory('eleme')">饿了么专享</div>
-      <div class="filter-option" :class="{ active: selectedCategory === 'brand' }" @click="selectCategory('brand')">大牌专享</div>
-      <div class="filter-option" :class="{ active: selectedCategory === 'rebate' }" @click="selectCategory('rebate')">返利餐</div>
-    </div>
+    <van-tabs v-model="activeName">
+      <van-tab name="all" title="全城霸王餐"/>
+      <van-tab name="elm" title="饿了么专版"/>
+      <van-tab name="brand" title="大牌专享"/>
+      <van-tab name="rebate" title="返利餐"/>
+    </van-tabs>
 
-    <!-- Second row: Dropdown and toggle buttons -->
-    <div class="filter-row">
-      <van-dropdown-menu>
-        <van-dropdown-item v-model="selectedTime" title="筛选" @click="selectTime">
-          <div class="dropdown-options">
-            <div class="time-options">
-              用餐时段
-              <van-cell v-model="selectedTime" :title="timeOption.title" v-for="timeOption in timeOptions" :key="timeOption.value" @click="selectTimeOption(timeOption.value)">
-                {{ timeOption.title }}
-              </van-cell>
-            </div>
-            <div class="platform-options">
-              平台
-              <van-cell v-model="selectedPlatform" :title="platformOption.title" v-for="platformOption in platformOptions" :key="platformOption.value" @click="selectPlatformOption(platformOption.value)">
-                {{ platformOption.title }}
-              </van-cell>
-            </div>
-          </div>
-        </van-dropdown-item>
-      </van-dropdown-menu>
-
-      <div class="filter-option" :class="{ active: highRebate }" @click="toggleHighRebate">高返利</div>
-      <div class="filter-option" :class="{ active: noReview }" @click="toggleNoReview">无需评价</div>
-
-      <div class="filter-option">
-        <van-switch v-model="onlyAvailable" size="24" active-color="#1989fa">只看可抢</van-switch>
-      </div>
-    </div>
+    <van-dropdown-menu>
+      <van-dropdown-item v-model="order" :options="orderOptions"/>
+      <van-dropdown-item v-model="time" :options="timeOptions"/>
+      <van-dropdown-item v-model="type" :options="typeOptions"/>
+      <van-dropdown-item v-model="platform" :options="platformOptions"/>
+    </van-dropdown-menu>
   </div>
 </template>
 
@@ -43,48 +21,53 @@
 export default {
   data() {
     return {
-      selectedCategory: 'all',
-      selectedTime: 'all',
-      selectedPlatform: 'all',
-      highRebate: false,
-      noReview: false,
-      onlyAvailable: false,
-      timeOptions: [
-        { value: 'all', title: '全部' },
-        { value: 'breakfast', title: '早餐' },
-        { value: 'lunch', title: '中餐' },
-        { value: 'dinner', title: '晚餐' },
+      activeName: 'all',
+
+      order: 'default',
+      orderOptions: [
+        {value: 'default', text: '默认排序'},
+        {value: 'distance', text: '距离排序'},
       ],
+
+      time: '0',
+      timeOptions: [
+        {value: '0', text: '全部时段'},
+        {value: '1', text: '早餐'},
+        {value: '2', text: '中餐'},
+        {value: '3', text: '晚餐'},
+      ],
+
+      type: '0',
+      typeOptions: [
+        {value: '0', text: '全部类型'},
+        {value: '1', text: '夜宵'},
+        {value: '2', text: '零售'},
+        {value: '3', text: '甜品奶茶'},
+      ],
+
+      platform: '0',
       platformOptions: [
-        { value: 'all', title: '全部' },
-        { value: 'mt', title: '美团' },
-        { value: 'elm', title: '饿了么' },
+        {value: '0', text: '全部平台'},
+        {value: '1', text: '美团'},
+        {value: '2', text: '饿了么'}
       ],
     };
   },
   methods: {
-    selectCategory(category) {
-      this.selectedCategory = category;
-      // Add logic for category selection if needed
+    changeOption(options) {
+      this.inlineOption = options;
+      this.inlineOption.map(item => {
+        console.log(item.options.filter(obj => obj.checked));
+      });
     },
-    selectTime() {
-      // Add logic for time selection if needed
+    onCancel() {
+      this.$refs.inlineOption.reset();
+      this.$refs.inlineOption.toggle();
     },
-    selectTimeOption(value) {
-      this.selectedTime = value;
-      // Add logic for time option selection if needed
+    onConfirm() {
+      this.$refs.inlineOption.toggle();
     },
-    selectPlatformOption(value) {
-      this.selectedPlatform = value;
-      // Add logic for platform option selection if needed
-    },
-    toggleHighRebate() {
-      this.highRebate = !this.highRebate;
-    },
-    toggleNoReview() {
-      this.noReview = !this.noReview;
-    },
-  },
+  }
 };
 </script>
 
@@ -93,41 +76,5 @@ export default {
 .goods-filter {
   /* Styles for goods filter */
 }
-
-.filter-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.filter-option {
-  padding: 10px;
-  border: 1px solid #ddd;
-  cursor: pointer;
-}
-
-.filter-option.active {
-  background-color: #1989fa;
-  color: #fff;
-}
-
-/* Add more styles as needed */
-
-.dropdown-options {
-  display: flex;
-  flex-direction: column;
-}
-
-.time-options,
-.platform-options {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.van-cell {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
 /* Adjust styles as needed */
 </style>
