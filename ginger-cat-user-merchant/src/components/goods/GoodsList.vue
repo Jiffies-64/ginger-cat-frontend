@@ -64,6 +64,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+  margin-bottom: 40px;
 }
 
 /* Add more styles as needed */

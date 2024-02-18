@@ -97,7 +97,10 @@ export default {
 
 <style scoped>
 .goods-row {
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 .image-col {

@@ -7,11 +7,11 @@
 
     <!-- Bottom Navigation Bar -->
     <van-tabbar v-model="active">
-      <van-tabbar-item to="/customer" icon="home-o">Home</van-tabbar-item>
-      <van-tabbar-item to="/customer/order" icon="orders-o">Order</van-tabbar-item>
-      <van-tabbar-item to="/customer/member" icon="friends-o">Member</van-tabbar-item>
-      <van-tabbar-item to="/customer/welfare" icon="gift-o">Welfare</van-tabbar-item>
-      <van-tabbar-item to="/customer/mine" icon="user-o">Mine</van-tabbar-item>
+      <van-tabbar-item to="/customer" icon="home-o">主页</van-tabbar-item>
+      <van-tabbar-item to="/customer/order" icon="orders-o">订单</van-tabbar-item>
+      <van-tabbar-item to="/customer/member" icon="friends-o">会员</van-tabbar-item>
+      <van-tabbar-item to="/customer/welfare" icon="gift-o">福利</van-tabbar-item>
+      <van-tabbar-item to="/customer/mine" icon="user-o">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

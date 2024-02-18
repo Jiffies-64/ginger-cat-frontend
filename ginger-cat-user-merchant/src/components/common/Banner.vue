@@ -24,6 +24,7 @@ export default {
 .banner {
   height: 200px; /* Adjust the height as needed */
   overflow: hidden; /* Ensure that overflow is hidden for swipe effect */
+  border-radius: 10px;
 }
 
 .banner-image {
