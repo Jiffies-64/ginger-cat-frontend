@@ -5,7 +5,7 @@ import CustomerOrder from '@/views/customer/main/order/CustomerOrder.vue';
 import CustomerMember from '@/views/customer/main/member/CustomerMember.vue';
 import CustomerWelfare from '@/views/customer/main/welfare/CustomerWelfare.vue';
 import CustomerMine from '@/views/customer/main/mine/CustomerMine.vue';
-import SearchVue from "@/views/customer/search/SearchVue.vue";
+import CustomerSearch from "@/views/customer/search/CustomerSearch.vue";
 import CustomerWrapper from "@/views/customer/main/CustomerWrapper.vue";
 import MerchantWrapper from "@/views/merchant/main/MerchantWrapper.vue";
 import MerchantHome from "@/views/merchant/main/home/MerchantHome.vue";
@@ -57,7 +57,7 @@ export default new Router({
         {
             path: '/customer/search',
             name: 'customer-search',
-            component: SearchVue,
+            component: CustomerSearch,
         },
         {
             path: '/customer/activity-detail',

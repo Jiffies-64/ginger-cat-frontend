@@ -11,9 +11,10 @@ export default {
   data() {
     return {
       bannerList: [
-        { imageUrl: require('@/assets/001.jpg') },
-        { imageUrl: require('@/assets/002.jpg') },
-        { imageUrl: require('@/assets/003.jpeg') },
+        { imageUrl: require('@/assets/customer/banner/banner-001.png') },
+        { imageUrl: require('@/assets/customer/banner/banner-002.png') },
+        { imageUrl: require('@/assets/customer/banner/banner-003.png') },
+        { imageUrl: require('@/assets/customer/banner/banner-004.png') }
       ],
     };
   },
@@ -22,7 +23,7 @@ export default {
 
 <style scoped>
 .banner {
-  height: 200px; /* Adjust the height as needed */
+  height: 122px; /* Adjust the height as needed */
   overflow: hidden; /* Ensure that overflow is hidden for swipe effect */
   border-radius: 10px;
 }

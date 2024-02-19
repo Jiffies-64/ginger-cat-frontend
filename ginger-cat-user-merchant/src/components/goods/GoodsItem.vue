@@ -26,9 +26,11 @@
             </van-col>
           </van-row>
         </van-col>
-        <van-col :span="8" class="add-to-cart-col">
-          <button class="add-to-cart">去抢单</button>
-        </van-col>
+        <router-link to="/customer/activity-detail">
+          <van-col :span="8" class="add-to-cart-col">
+            <button class="add-to-cart">去抢单</button>
+          </van-col>
+        </router-link>
       </van-row>
     </van-col>
   </van-row>

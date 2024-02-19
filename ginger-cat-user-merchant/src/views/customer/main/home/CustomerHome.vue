@@ -37,11 +37,11 @@ export default {
   data() {
     return {
       imageList: [
-        {imageUrl: 'https://img.yzcdn.cn/vant/cat.jpeg', title: '美团红包', description: '天天神券红包'},
-        {imageUrl: 'https://img.yzcdn.cn/vant/cat.jpeg', title: '饿了么红包', description: '外卖补贴红包'},
-        {imageUrl: 'https://img.yzcdn.cn/vant/cat.jpeg', title: '免费抽大奖', description: '千元京东E卡'},
-        {imageUrl: 'https://img.yzcdn.cn/vant/cat.jpeg', title: '大牌优选', description: '低至3折起'},
-        {imageUrl: 'https://img.yzcdn.cn/vant/cat.jpeg', title: '内部福利群', description: '享大牌免单'},
+        {imageUrl: require('@/assets/customer/home/mt.png'), title: '美团红包', description: '天天神券红包'},
+        {imageUrl: require('@/assets/customer/home/elm.png'), title: '饿了么红包', description: '外卖补贴红包'},
+        {imageUrl: require('@/assets/customer/home/zp.png'), title: '免费抽大奖', description: '千元京东E卡'},
+        {imageUrl: require('@/assets/customer/home/zs.png'), title: '大牌优选', description: '低至3折起'},
+        {imageUrl: require('@/assets/customer/home/ql.png'), title: '内部福利群', description: '享大牌免单'},
       ],
     };
   },
@@ -52,7 +52,7 @@ export default {
 /* Your home page styles here */
 .home {
   padding: 14px;
-  background-color: #f0f0f0;
+  background: linear-gradient(to bottom, #ff8355 22vh, #f0f0f0 30vh);
 }
 
 .icon-row {

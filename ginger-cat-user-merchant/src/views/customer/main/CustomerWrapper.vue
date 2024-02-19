@@ -6,7 +6,7 @@
     <router-view></router-view>
 
     <!-- Bottom Navigation Bar -->
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" active-color="#FF4500">
       <van-tabbar-item to="/customer" icon="home-o">主页</van-tabbar-item>
       <van-tabbar-item to="/customer/order" icon="orders-o">订单</van-tabbar-item>
       <van-tabbar-item to="/customer/member" icon="friends-o">会员</van-tabbar-item>
