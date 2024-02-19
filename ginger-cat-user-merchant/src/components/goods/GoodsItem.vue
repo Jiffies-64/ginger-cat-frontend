@@ -1,5 +1,5 @@
 <template>
-  <van-row type="flex" align="center" class="goods-row">
+  <van-row type="flex" align="center" class="order-row">
     <van-col :span="6" class="image-col">
       <!-- 左侧内容 -->
       <img :src="item.imageUrl" alt="Goods Image" class="goods-image"/>
@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style scoped>
-.goods-row {
+.order-row {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
