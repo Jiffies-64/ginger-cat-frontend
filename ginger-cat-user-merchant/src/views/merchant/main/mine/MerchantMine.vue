@@ -147,7 +147,7 @@ export default {
 
 <style scoped>
 .user-page {
-  padding: 20px 14px 14px 14px;
+  padding: 30px 14px 14px 14px;
   height: 100vh;
   background-color: #f0f0f0;
 }

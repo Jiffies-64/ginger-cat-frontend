@@ -13,9 +13,11 @@
       <ShopList/>
     </div>
 
-    <van-tabbar active-color="#fa8a19">
-      <van-tabbar-item icon="wap-home-o" badge="+">新增店铺</van-tabbar-item>
-    </van-tabbar>
+    <router-link to="/merchant/add-shop-base">
+      <van-tabbar active-color="#fa8a19">
+        <van-tabbar-item icon="wap-home-o" badge="+">新增店铺</van-tabbar-item>
+      </van-tabbar>
+    </router-link>
   </div>
 </template>
 
@@ -70,7 +72,6 @@ export default {
   height: 100vh;
   background-color: #f0f0f0;
 }
-
 
 
 </style>

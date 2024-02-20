@@ -15,6 +15,9 @@ import MerchantPromotion from "@/views/merchant/main/promotion/MerchantPromotion
 import MerchantPromotionInfo from "@/views/merchant/main/promotion/MerchantPromotionInfo.vue";
 import ActivityDetail from "@/views/customer/detail/ActivityDetail.vue";
 import MyShop from "@/views/merchant/shop/MyShop.vue";
+import AddShopBaseInfo from "@/views/merchant/shop/AddShopBaseInfo.vue";
+import AddShopQualificationsInfo from "@/views/merchant/shop/AddShopQualificationsInfo.vue";
+import AddShopSuccess from "@/views/merchant/shop/AddShopSuccess.vue";
 
 Vue.use(Router);
 
@@ -101,6 +104,21 @@ export default new Router({
             path: '/merchant/my-shop',
             name: 'merchant-my-shop',
             component: MyShop,
+        },
+        {
+            path: '/merchant/add-shop-base',
+            name: 'merchant-add-shop-base',
+            component: AddShopBaseInfo,
+        },
+        {
+            path: '/merchant/add-shop-qualifications',
+            name: 'merchant-add-shop-qualifications',
+            component: AddShopQualificationsInfo,
+        },
+        {
+            path: '/merchant/add-shop-success',
+            name: 'merchant-add-shop-success',
+            component: AddShopSuccess,
         },
     ],
 })

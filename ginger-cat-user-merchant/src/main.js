@@ -4,8 +4,11 @@ import router from './router';
 import store from './store';
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import { Uploader, Toast } from 'vant-green';
 
 Vue.use(Vant);
+Vue.use(Toast);
+Vue.use(Uploader);
 
 Vue.config.productionTip = false;
 
