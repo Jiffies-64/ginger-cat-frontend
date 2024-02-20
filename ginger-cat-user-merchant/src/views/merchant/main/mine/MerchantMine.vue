@@ -32,7 +32,7 @@
     <!-- My Earnings -->
     <van-card>
       <template #title>
-        <van-row type="flex" justify="space-between">
+        <van-row type="flex" justify="space-between" style="margin-top: 5px">
           <van-col class="large-bold">我的钱包</van-col>
           <van-col class="normal-thin">></van-col>
         </van-row>
@@ -54,15 +54,19 @@
 
     <van-card>
       <template #title>
-        <van-row type="flex" justify="space-between">
-          <van-col class="large-bold">我的店铺(1)</van-col>
-          <van-col class="normal-thin">></van-col>
-        </van-row>
+        <router-link to="/merchant/my-shop">
+          <van-row type="flex" justify="space-between" style="margin-top: 5px">
+            <van-col class="large-bold">我的店铺(1)</van-col>
+            <van-col class="normal-thin">></van-col>
+          </van-row>
+        </router-link>
       </template>
       <template #desc>
         <van-row type="flex" justify="space-between" align="center" style="margin-top: 20px;">
-          <van-col :span="10" class="normal-bold">
-            <van-icon name="shop-o" class="service-icon"></van-icon>
+          <van-col :span="2" class="normal-bold">
+            <img :src="require('@/assets/001.jpg')" alt="shop-o" class="shop-image"/>
+          </van-col>
+          <van-col :span="13" class="normal-bold">
             <span style="margin-left: 10px">蟹堡王</span>
           </van-col>
           <van-col :span="6" class="small-thin" style="text-align: right">
@@ -70,8 +74,10 @@
           </van-col>
         </van-row>
         <van-row type="flex" justify="space-between" align="center" style="margin-top: 20px;">
-          <van-col :span="10" class="normal-bold">
-            <van-icon name="shop-o" class="service-icon"></van-icon>
+          <van-col :span="2" class="normal-bold">
+            <img :src="require('@/assets/merchant/shop/shop.png')" alt="" class="shop-image"/>
+          </van-col>
+          <van-col :span="13" class="normal-bold">
             <span style="margin-left: 10px">海霸王</span>
           </van-col>
           <van-col :span="6" class="small-thin" style="text-align: right">
@@ -292,5 +298,13 @@ export default {
   line-height: 20px;
   border-radius: 10px;
   padding: 0 5px;
+}
+
+.shop-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
 }
 </style>

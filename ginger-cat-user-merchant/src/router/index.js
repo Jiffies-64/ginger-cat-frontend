@@ -14,6 +14,7 @@ import MerchantOrder from "@/views/merchant/main/order/MerchantOrder.vue";
 import MerchantPromotion from "@/views/merchant/main/promotion/MerchantPromotion.vue";
 import MerchantPromotionInfo from "@/views/merchant/main/promotion/MerchantPromotionInfo.vue";
 import ActivityDetail from "@/views/customer/detail/ActivityDetail.vue";
+import MyShop from "@/views/merchant/shop/MyShop.vue";
 
 Vue.use(Router);
 
@@ -95,6 +96,11 @@ export default new Router({
                         component: MerchantPromotionInfo,
                     },
                 ],
+        },
+        {
+            path: '/merchant/my-shop',
+            name: 'merchant-my-shop',
+            component: MyShop,
         },
     ],
 })
