@@ -1,39 +1,40 @@
 <template>
-  <van-row type="flex" align="center" class="order-row">
-    <van-col :span="6" class="image-col">
-      <!-- 左侧内容 -->
-      <img :src="item.imageUrl" alt="Goods Image" class="goods-image"/>
-    </van-col>
-    <van-col :span="18" class="info-col">
-      <!-- 右侧内容 -->
-      <h3 class="goods-name">{{ item.name }}</h3>
-      <van-row type="flex" justify="space-between" class="goods-extra-info">
-        <van-col class="goods-platform">{{ item.platform }}</van-col>
-        <van-col class="goods-distance">距离 {{ item.distance }}km</van-col>
-      </van-row>
-      <div class="goods-promotion">{{ item.promotion }}</div>
-      <van-row align="bottom" class="bottom-row">
-        <van-col :span="16">
-          <p class="goods-order-time">抢单时间：{{ item.orderTime }}</p>
-          <van-row gutter="10" type="flex" align="center" justify="left" class="goods-remaining-info">
-            <van-col :span="10">
-              <div class="goods-progress-bar">
-                <div :style="{ width: progressWidth }"></div>
-              </div>
-            </van-col>
-            <van-col :span="12">
-              <p class="goods-remaining">剩余{{ item.remainingOrders }}份</p>
-            </van-col>
-          </van-row>
-        </van-col>
-        <router-link to="/customer/activity-detail">
+  <router-link to="/customer/activity-detail">
+    <van-row type="flex" align="center" class="order-row">
+      <van-col :span="6" class="image-col">
+        <!-- 左侧内容 -->
+        <img :src="item.imageUrl" alt="Goods Image" class="goods-image"/>
+      </van-col>
+      <van-col :span="18" class="info-col">
+        <!-- 右侧内容 -->
+        <h3 class="goods-name">{{ item.name }}</h3>
+        <van-row type="flex" justify="space-between" class="goods-extra-info">
+          <van-col class="goods-platform">{{ item.platform }}</van-col>
+          <van-col class="goods-distance">距离 {{ item.distance }}km</van-col>
+        </van-row>
+        <div class="goods-promotion">{{ item.promotion }}</div>
+        <van-row align="bottom" class="bottom-row">
+          <van-col :span="16">
+            <p class="goods-order-time">抢单时间：{{ item.orderTime }}</p>
+            <van-row gutter="10" type="flex" align="center" justify="left" class="goods-remaining-info">
+              <van-col :span="10">
+                <div class="goods-progress-bar">
+                  <div :style="{ width: progressWidth }"></div>
+                </div>
+              </van-col>
+              <van-col :span="12">
+                <p class="goods-remaining">剩余{{ item.remainingOrders }}份</p>
+              </van-col>
+            </van-row>
+          </van-col>
+
           <van-col :span="8" class="add-to-cart-col">
             <button class="add-to-cart">去抢单</button>
           </van-col>
-        </router-link>
-      </van-row>
-    </van-col>
-  </van-row>
+        </van-row>
+      </van-col>
+    </van-row>
+  </router-link>
 </template>
 
 <script>
@@ -125,6 +126,7 @@ export default {
   font-size: 18px; /* 调整字体大小 */
   margin: 0;
   padding: 0;
+  color: #222222;
 }
 
 .goods-extra-info {
