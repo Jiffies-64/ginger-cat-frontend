@@ -78,3 +78,14 @@
 2024/02/02 13:54:04 [alert] 25188#4876: could not respawn worker
 2024/02/02 13:59:32 [notice] 4188#4176: signal process started
 2024/02/22 00:11:09 [error] 5284#27776: *2 CreateFile() "D:\Code\Tools\Nginx\nginx-1.23.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.gingercat.top, request: "GET /favicon.ico HTTP/1.1", host: "www.gingercat.top", referrer: "http://www.gingercat.top/api/content/shop-base/all"
+2024/02/22 00:52:47 [emerg] 4500#22444: host not found in upstream "fileserver" in D:\Code\Projs\GingerCat\ginger-cat-frontend\nginx-1.23.1/conf/nginx.conf:185
+2024/02/22 00:59:52 [notice] 8396#3044: signal process started
+2024/02/22 00:59:52 [error] 8396#3044: OpenEvent("Global\ngx_reload_7604") failed (2: The system cannot find the file specified)
+2024/02/22 01:01:49 [notice] 21376#24384: signal process started
+2024/02/22 01:01:49 [error] 21376#24384: OpenEvent("Global\ngx_reload_7604") failed (2: The system cannot find the file specified)
+2024/02/22 01:02:58 [notice] 24352#18720: signal process started
+2024/02/22 01:02:58 [error] 24352#18720: OpenEvent("Global\ngx_reload_7604") failed (2: The system cannot find the file specified)
+2024/02/22 01:03:33 [notice] 22524#3076: signal process started
+2024/02/22 01:06:25 [error] 8164#11572: *3 CreateFile() "D:\Code\Projs\GingerCat\ginger-cat-frontend\nginx-1.23.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.gingercat.top, request: "GET /favicon.ico HTTP/1.1", host: "www.gingercat.top", referrer: "http://www.gingercat.top/ui/"
+2024/02/22 01:10:39 [notice] 21364#1420: signal process started
+2024/02/22 01:17:38 [notice] 22884#15456: signal process started

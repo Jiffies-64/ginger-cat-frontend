@@ -33,7 +33,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     response => response,
     error => {
-        Toast.success(error.response.data.errMessage || error.message);
+        Toast.fail(error.response.data.errMessage || error.message);
 
         if (error.response.status === "401" && error.response.data.errMessage === '没有认证') {
             window.location = 'http://www.gingercat.top/sign.html';
