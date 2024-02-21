@@ -62,28 +62,19 @@
         </router-link>
       </template>
       <template #desc>
-        <van-row type="flex" justify="space-between" align="center" style="margin-top: 20px;">
-          <van-col :span="2" class="normal-bold">
-            <img :src="require('@/assets/001.jpg')" alt="shop-o" class="shop-image"/>
-          </van-col>
-          <van-col :span="13" class="normal-bold">
-            <span style="margin-left: 10px">蟹堡王</span>
-          </van-col>
-          <van-col :span="6" class="small-thin" style="text-align: right">
-            <div>审核通过 ></div>
-          </van-col>
-        </van-row>
-        <van-row type="flex" justify="space-between" align="center" style="margin-top: 20px;">
-          <van-col :span="2" class="normal-bold">
-            <img :src="require('@/assets/merchant/shop/shop.png')" alt="" class="shop-image"/>
-          </van-col>
-          <van-col :span="13" class="normal-bold">
-            <span style="margin-left: 10px">海霸王</span>
-          </van-col>
-          <van-col :span="6" class="small-thin" style="text-align: right">
-            <div>待审核 ></div>
-          </van-col>
-        </van-row>
+        <div>
+          <van-row v-for="shop in shops" :key="shop.id" type="flex" justify="space-between" align="center" style="margin-top: 20px;">
+            <van-col :span="2" class="normal-bold">
+              <img :src="require('@/assets/merchant/shop/shop.png')" alt="" class="shop-image"/>
+            </van-col>
+            <van-col :span="13" class="normal-bold">
+              <span style="margin-left: 10px">{{ shop.shopName }}</span>
+            </van-col>
+            <van-col :span="6" class="small-thin" style="text-align: right">
+              <div> ></div>
+            </van-col>
+          </van-row>
+        </div>
       </template>
     </van-card>
 
@@ -127,11 +118,14 @@
 </template>
 
 <script>
+import {getShopBaseBriefInfo} from "@/api/content";
+
 export default {
   name: "MerchantMine",
   data() {
     return {
-      active: 0
+      active: 0,
+      shops: []
     };
   },
   methods: {
@@ -141,7 +135,16 @@ export default {
     goToSettings() {
       // Handle navigation to Settings
     },
-  }
+  },
+  async created() {
+    try {
+      const response = await getShopBaseBriefInfo();
+      console.log(response);
+      this.shops = response.result;
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 </script>
 

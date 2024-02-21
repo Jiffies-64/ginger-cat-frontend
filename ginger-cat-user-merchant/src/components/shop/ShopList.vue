@@ -1,6 +1,7 @@
 <template>
   <div class="shop-list">
-    <ShopItem v-for="item in shopItems" :key="item.id" :item="item"/>
+    <!-- 使用 v-for 循环 shops 属性 -->
+    <ShopItem v-for="shop in shops" :key="shop.id" :shop="shop"/>
   </div>
 </template>
 
@@ -11,27 +12,15 @@ export default {
   components: {
     ShopItem,
   },
+  props: {
+    shops: {
+      type: Array, // 应该是数组类型
+      default: () => []
+    },
+  },
   data() {
     return {
       name: "ShopList",
-      shopItems: [
-        {
-          id: 1,
-          name: '美味汉堡',
-          image_url: require('@/assets/001.jpg'),
-          phone: '18812348765',
-          shop_addr: '万达国际中心B座',
-          shop_type: '品牌连锁'
-        },
-        {
-          id: 2,
-          name: '美味炸鸡',
-          image_url: require('@/assets/002.jpg'),
-          phone: '18812348765',
-          shop_addr: '万达国际中心A座',
-          shop_type: '品牌连锁'
-        }
-      ],
     };
   },
 };

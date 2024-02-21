@@ -10,7 +10,8 @@
     </van-tabs>
 
     <div class="shop-list-wrapper">
-      <ShopList/>
+      <!-- 将 shops 传递给子组件 ShopList -->
+      <ShopList :shops="shops"/>
     </div>
 
     <router-link to="/merchant/add-shop-base">
@@ -23,6 +24,7 @@
 
 <script>
 import ShopList from "@/components/shop/ShopList.vue";
+import {getShopBaseBriefInfo} from "@/api/content";
 
 export default {
   name: 'MyShop',
@@ -31,7 +33,8 @@ export default {
     return {
       value: '',
       activeName: 'a',
-      showAction: false
+      showAction: false,
+      shops: []
     };
   },
   methods: {
@@ -46,8 +49,17 @@ export default {
     },
     goBack() {
       this.$router.go(-1);
+    },
+  },
+  async created() {
+    try {
+      const response = await getShopBaseBriefInfo();
+      console.log(response);
+      this.shops = response.result;
+    } catch (error) {
+      console.error(error);
     }
-  }
+  },
 };
 </script>
 

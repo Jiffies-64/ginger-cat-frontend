@@ -1,27 +1,28 @@
 <template>
   <router-link to="/customer/activity-detail">
     <div class="order-row">
-      <div class="orange small-thin" style="text-align: right">待审核</div>
+      <div class="orange small-thin" style="text-align: right; margin: 5px 0">{{ shop.status }}</div>
       <van-row type="flex" align="center">
         <van-col :span="6" class="image-col">
           <!-- 左侧内容 -->
-          <img :src="item.image_url" alt="shop Image" class="shop-image"/>
+          <!--          <img :src="shop.imageUrl" alt="shop Image" class="shop-image"/>-->
+          <img :src="require('@/assets/001.jpg')" alt="shop Image" class="shop-image"/>
         </van-col>
         <van-col :span="18" class="info-col">
           <!-- 右侧内容 -->
-          <h3 class="shop-name">{{ item.name }}</h3>
-          <van-row class="shop-extra-info">
-            <van-col class="small-thin">手机号码：</van-col>
-            <van-col class="small-bold">{{ item.phone }}</van-col>
-          </van-row>
-          <van-row class="shop-extra-info">
-            <van-col class="small-thin">店铺地址：</van-col>
-            <van-col class="small-bold">{{ item.shop_addr }}</van-col>
-          </van-row>
-          <van-row class="shop-extra-info">
-            <van-col class="small-thin">店铺类型：</van-col>
-            <van-col class="small-bold">{{ item.shop_type }}</van-col>
-          </van-row>
+          <h3 class="shop-name">{{ shop.shopName }}</h3>
+          <div class="shop-extra-info">
+            <span class="small-thin">手机号码</span>
+            <span class="small-bold">{{ shop.mobile }}</span>
+          </div>
+          <div class="shop-extra-info">
+            <span class="small-thin">店铺地址</span>
+            <span class="small-bold">{{ shop.shopAddress }}</span>
+          </div>
+          <div class="shop-extra-info">
+            <span class="small-thin">店铺类型</span>
+            <span class="small-bold">{{ shop.shopType }}</span>
+          </div>
         </van-col>
       </van-row>
       <div class="normal-thin my-button" style="text-align: right; margin-top: 20px">立即完善 ></div>
@@ -32,27 +33,28 @@
 <script>
 export default {
   props: {
-    item: {
+    shop: {
       type: Object,
       required: true,
       default: () => ({
-        id: 0,
-        name: '',
-        image_url: require('@/assets/001.jpg'),
-        phone: '',
-        shop_addr: '',
-        shop_type: ''
+        id: '',
+        shopName: '',
+        imageUrl: require('@/assets/001.jpg'),
+        mobile: '',
+        shopAddress: '',
+        shopType: '',
+        status: ''
       }),
-      validator: (value) => {
-        return (
-            typeof value.id === 'number' &&
-            typeof value.name === 'string' &&
-            typeof value.image_url === 'string' &&
-            typeof value.phone === 'string' &&
-            typeof value.shop_addr === 'string' &&
-            typeof value.shop_type === 'string'
-        );
-      },
+      // validator: (value) => {
+      //   return (
+      //       typeof value.id === 'string' &&
+      //       typeof value.shopName === 'string' &&
+      //       typeof value.imageUrl === 'string' &&
+      //       typeof value.mobile === 'string' &&
+      //       typeof value.shopAddress === 'string' &&
+      //       typeof value.shopType === 'string'
+      //   );
+      // },
     },
   },
   data() {
@@ -118,7 +120,7 @@ export default {
 .shop-extra-info {
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  margin: 5px 0;
   padding: 0;
 }
 
