@@ -56,7 +56,7 @@
       <template #title>
         <router-link to="/merchant/my-shop">
           <van-row type="flex" justify="space-between" style="margin-top: 5px">
-            <van-col class="large-bold">我的店铺(1)</van-col>
+            <van-col class="large-bold">我的店铺({{ shops.length }})</van-col>
             <van-col class="normal-thin">></van-col>
           </van-row>
         </router-link>
@@ -68,7 +68,7 @@
               <img :src="require('@/assets/merchant/shop/shop.png')" alt="" class="shop-image"/>
             </van-col>
             <van-col :span="13" class="normal-bold">
-              <span style="margin-left: 10px">{{ shop.shopName }}</span>
+              <span class="overflow-ellipsis" style="margin-left: 10px">{{ shop.shopName }}</span>
             </van-col>
             <van-col :span="6" class="small-thin" style="text-align: right">
               <div> ></div>
@@ -149,6 +149,13 @@ export default {
 </script>
 
 <style scoped>
+.overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 .user-page {
   padding: 30px 14px 14px 14px;
   height: 100vh;
